@@ -1,0 +1,448 @@
+body {
+  background-color: #EFEFEF;
+  margin: 0%;
+}
+
+#menu_nav {
+  width: 100px;
+  height: 100vh;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#menu_nav .conteneur_menu {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#menu_nav .conteneur_menu h1 {
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700px;
+}
+
+#menu_nav .conteneur_menu .conteneurIcon {
+  position: absolute;
+  top: 50%;
+  margin-top: -50%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menu_nav .conteneur_menu .conteneurIcon a {
+  text-decoration: none;
+}
+
+#menu_nav .conteneur_menu .conteneurIcon a .IconMenu img {
+  width: 40px;
+  margin-left: 30px;
+}
+
+#menu_nav .conteneur_menu .conteneurIcon a .IconMenu h2 {
+  color: #202020;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  width: 80%;
+  margin-left: 10%;
+}
+
+#login {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#login a {
+  text-decoration: none;
+}
+
+#login a .IconMenu img {
+  width: 30px;
+  margin: 10px 0 5px  20px;
+}
+
+#login a .IconMenu h2 {
+  color: #202020;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  width: 80%;
+  margin: 0 0 0 10%;
+}
+
+#accueil {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#accueil .conteneurAccueil {
+  width: 80%;
+  height: 80vh;
+  margin: 5% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#accueil .conteneurAccueil .imgAccueil {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+#accueil .conteneurAccueil .imgAccueil .imgMoov {
+  position: absolute;
+  border-radius: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  -webkit-box-shadow: 0px 0px 10px #202020;
+          box-shadow: 0px 0px 10px #202020;
+}
+
+#accueil .conteneurAccueil .imgAccueil .un {
+  width: 300px;
+  height: 420px;
+  background-image: url("../img/motor_allu.jpg");
+  top: 50%;
+  left: 50%;
+  margin: -210px -150px;
+}
+
+#accueil .conteneurAccueil .imgAccueil .deux {
+  background-image: url("../img/interior_motor.jpg");
+  width: 420px;
+  height: 300px;
+  top: 30%;
+  left: 35%;
+  margin: -150px -210px;
+}
+
+#accueil .conteneurAccueil .imgAccueil .trois {
+  background-image: url("../img/motor_blue.jpg");
+  width: 420px;
+  height: 300px;
+  top: 70%;
+  left: 65%;
+  margin: -150px -210px;
+}
+
+#accueil .conteneurAccueil .textConteneur h1 {
+  text-align: center;
+  width: 80%;
+  margin: 0 10%;
+  color: #202020;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+#accueil .conteneurAccueil .textConteneur p {
+  text-align: center;
+  width: 80%;
+  margin: 0 10%;
+  color: #202020;
+  font-size: 12px;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+
+#signIn {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#signIn .conteneurSignIn {
+  width: 80%;
+  height: 80vh;
+  margin: 5% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#signIn .conteneurSignIn .contenuSignIn {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 400px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#signIn .conteneurSignIn .contenuSignIn h1 {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  color: #202020;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+#signIn .conteneurSignIn .contenuSignIn p {
+  text-align: center;
+  width: 80%;
+  margin: 10px 10% 30px 10%;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+
+#signIn .conteneurSignIn .contenuSignIn .formContenu {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#signIn .conteneurSignIn .contenuSignIn .formContenu label {
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 10%;
+}
+
+#signIn .conteneurSignIn .contenuSignIn .formContenu input {
+  margin: 10px 10%;
+  width: 80%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#signIn .conteneurSignIn .contenuSignIn .formContenu button {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 10%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #202020;
+  border: none;
+}
+
+#Commande {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#Commande .conteneurCommande {
+  width: 80%;
+  height: 80vh;
+  margin: 5% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Commande .conteneurCommande .contenuCommande {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#Commande .conteneurCommande .contenuCommande tr {
+  border-bottom: 1px solid #202020;
+}
+
+#Commande .conteneurCommande .contenuCommande tr td {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  border-right: 1px solid #202020;
+}
+
+#piece {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#piece .conteneurpiece {
+  width: 80%;
+  height: 80vh;
+  margin: 5% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#piece .conteneurpiece .contenupiece {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 1000px;
+  height: 800px;
+}
+
+#piece .conteneurpiece .contenupiece h1 {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  color: #202020;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+#piece .conteneurpiece .contenupiece .btnPieces {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#piece .conteneurpiece .contenupiece .btnPieces button {
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #202020;
+  border: none;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece {
+  width: 500px;
+  margin: 0 250px;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece h2 {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: underline;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece label {
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece input {
+  margin-bottom: 10px;
+  width: 80%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece button {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #202020;
+  border: none;
+}
+
+#piece .conteneurpiece .contenupiece .invisible {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
