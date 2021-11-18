@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class Controller
 {
     public static function error404()

@@ -13,9 +13,9 @@ class ModelMarque extends Model
     public function __construct($data = array())
     {
         if (!empty($data)) {
-            $this->idMarque = $data['idMarque'];
-            $this->nomMarque = $data['nomMarque'];
-            $this->nbModele = $data['nbModele'];
+            $this->idMarque = $data['idmarque'];
+            $this->nomMarque = $data['nommarque'];
+            $this->nbModele = $data['nbmodele'];
         }
     }
 

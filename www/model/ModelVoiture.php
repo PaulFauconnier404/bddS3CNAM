@@ -4,7 +4,7 @@ require_once(File::build_path(array('model', 'Model.php')));
 
 class ModelVoiture extends Model
 {
-    protected static $object = 'Voiture';
+    protected static $object = 'voiture';
 
     private $idVoiture;
     private $dateEntreeVoiture;
@@ -16,12 +16,12 @@ class ModelVoiture extends Model
     public function __construct($data = array())
     {
         if (!empty($data)) {
-            $this->idVoiture = $data['idVoiture'];
-            $this->dateEntreeVoiture = $data['dateEntreeVoiture'];
-            $this->descriptifVoiture = $data['descriptifVoiture'];
-            $this->couleurVoiture = $data['couleurVoiture'];
-            $this->etatVendableVoiture = $data['etatVendableVoiture'];
-            $this->idModeleVoiture = $data['idModele'];
+            $this->idVoiture = $data['idvoiture'];
+            $this->dateEntreeVoiture = $data['dateentreevoiture'];
+            $this->descriptifVoiture = $data['descriptifvoiture'];
+            $this->couleurVoiture = $data['couleurvoiture'];
+            $this->etatVendableVoiture = $data['etatvendablevoiture'];
+            $this->idModeleVoiture = $data['idmodelevoiture'];
         }
     }
 

@@ -14,9 +14,9 @@ class ModelCategorie extends Model
     public function __construct($data = array())
     {
         if (!empty($data)) {
-            $this->idCategorie = $data['idCategorie'];
-            $this->nomCategorie = $data['nomCategorie'];
-            $this->nbPiece = $data['nbPiece'];
+            $this->idCategorie = $data['idcategorie'];
+            $this->nomCategorie = $data['nomcategorie'];
+            $this->nbPiece = $data['nbpiece'];
         }
     }
 

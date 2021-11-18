@@ -23,6 +23,36 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    if ($_GET['controller'] == "commande") {
+        $home = 'img/icon/homeV.png';
+        $cart = 'img/icon/cartP.png';
+        $piece = 'img/icon/setV.png';
+        $voiture = 'img/icon/carV.png';
+    } else if ($_GET['controller'] == "accueil") {
+        $home = 'img/icon/homeP.png';
+        $cart = 'img/icon/cartV.png';
+        $piece = 'img/icon/setV.png';
+        $voiture = 'img/icon/carV.png';
+    } else if ($_GET['controller'] == "piece") {
+        $home = 'img/icon/homeV.png';
+        $cart = 'img/icon/cartV.png';
+        $piece = 'img/icon/setP.png';
+        $voiture = 'img/icon/carV.png';
+    } else if ($_GET['controller'] == "voiture") {
+        $home = 'img/icon/homeV.png';
+        $cart = 'img/icon/cartV.png';
+        $piece = 'img/icon/setV.png';
+        $voiture = 'img/icon/carP.png';
+    } else if ($_GET['controller'] == "signin") {
+        $home = 'img/icon/homeV.png';
+        $cart = 'img/icon/cartP.png';
+        $piece = 'img/icon/setV.png';
+        $voiture = 'img/icon/carV.png';
+    }
+
+    ?>
 
     <!-- Page Wrapper -->
 
@@ -34,22 +64,28 @@
             </h1>
             <div class="conteneurIcon">
 
-                <a href=" ">
+                <a href="index.php?controller=accueil&action=readAll">
                     <div class="IconMenu">
-                        <img src="icon/" alt="">
+                        <img src="<?php echo $home; ?>" alt="">
                         <h2>Accueil</h2>
                     </div>
                 </a>
-                <a href="">
+                <a href="index.php?controller=commande&action=readAll">
                     <div class="IconMenu">
-                        <img src="icon/" alt="">
+                        <img src="<?php echo $cart; ?>" alt="">
                         <h2>Commandes reçus</h2>
                     </div>
                 </a>
-                <a href="">
+                <a href="index.php?controller=piece&action=readAll">
                     <div class="IconMenu">
-                        <img src="icon/" alt="">
+                        <img src="<?php echo $piece; ?>" alt="">
                         <h2>Gérer les pièces</h2>
+                    </div>
+                </a>
+                <a href="index.php?controller=voiture&action=readAll">
+                    <div class="IconMenu">
+                        <img src="<?php echo $voiture; ?>" alt="">
+                        <h2>Gérer les voitures</h2>
                     </div>
                 </a>
             </div>
@@ -57,9 +93,9 @@
     </div>
 
     <div id="login">
-        <a href="">
+        <a href="index.php?controller=signin&action=readAll">
             <div class="IconMenu">
-                <img src="" alt="">
+                <img src="img/icon/user.png" alt="">
                 <h2>Log in</h2>
             </div>
         </a>
