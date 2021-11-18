@@ -1,8 +1,13 @@
 <?php
+session_start();
+// $cookie_name = "user";
+// $cookie_value = "John Doe";
+// setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+require_once(File::build_path(array('controller', 'ControllerSignin.php')));
 require_once(File::build_path(array('controller', 'ControllerAccueil.php')));
 require_once(File::build_path(array('controller', 'ControllerPiece.php')));
 require_once(File::build_path(array('controller', 'ControllerCommande.php')));
-require_once(File::build_path(array('controller', 'ControllerSign.php')));
+require_once(File::build_path(array('controller', 'ControllerVoiture.php')));
 
 $controller_default = 'accueil';
 

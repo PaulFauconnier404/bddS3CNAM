@@ -1,15 +1,16 @@
 <?php
 
-require_once (File::build_path(array('model', 'ModelPersonne.php')));
-require_once (File::build_path(array('model', 'ModelConducteur.php')));
-require_once (File::build_path(array('model', 'ModelBus.php')));
-require_once (File::build_path(array('controller', 'Controller.php')));
+require_once(File::build_path(array('model', 'ModelPersonne.php')));
+require_once(File::build_path(array('model', 'ModelConducteur.php')));
+require_once(File::build_path(array('model', 'ModelBus.php')));
+require_once(File::build_path(array('controller', 'Controller.php')));
 
 class ControllerConducteur extends Controller
 {
     protected static $object = 'conducteur';
 
-    public static function readAll() {
+    public static function readAll()
+    {
         $tab_conducteur = ModelConducteur::selectAll();
         $tab_personne = ModelPersonne::selectAll();
         $tab = [];
@@ -34,10 +35,11 @@ class ControllerConducteur extends Controller
         $tab_bus = ModelBus::readBusAvailable();
         $view = 'list';
         $pagetitle = 'Conducteur - TransVar';
-        require (File::build_path(array('view', 'view.php')));
+        require(File::build_path(array('view', 'view.php')));
     }
 
-    public static function created() {
+    public static function created()
+    {
         $data_pers = array(
             "nom" => strtoupper($_GET["nom"]),
             "prenom" => ucfirst($_GET["prenom"]),
@@ -53,7 +55,7 @@ class ControllerConducteur extends Controller
             "dateembauche" => $_GET["dateembauche"],
             "idpersonne" => $id_pers,
         );
-        if($_GET['idbus'] !== "-1")
+        if ($_GET['idbus'] !== "-1")
             $data_con["idbus"] = $_GET['idbus'];
 
         $con = new ModelConducteur($data_con);
@@ -62,13 +64,15 @@ class ControllerConducteur extends Controller
         self::readAll();
     }
 
-    public static function deleted() {
+    public static function deleted()
+    {
         ModelConducteur::delete($_GET['id']);
 
         self::readAll();
     }
 
-    public static function read() {
+    public static function read()
+    {
         $conducteur = ModelConducteur::select($_GET['id']);
         $personne = ModelPersonne::select($conducteur->get('idpersonne'));
 
@@ -108,14 +112,16 @@ class ControllerConducteur extends Controller
         $tab_bus = ModelBus::readBusAvailable();
         $view = 'list';
         $pagetitle = 'Conducteur - TransVar';
-        require (File::build_path(array('view', 'view.php')));
+        require(File::build_path(array('view', 'view.php')));
     }
 
-    public static function update() {
+    public static function update()
+    {
         self::read();
     }
 
-    public static function updated() {
+    public static function updated()
+    {
         $data_pers = array(
             'id' => $_GET['idpersonne'],
             "nom" => strtoupper($_GET["nom"]),
@@ -136,7 +142,7 @@ class ControllerConducteur extends Controller
             "idpersonne" => $_GET['idpersonne'],
         );
 
-        if($_GET['idbus'] !== "-1")
+        if ($_GET['idbus'] !== "-1")
             $data_con["idbus"] = $_GET['idbus'];
 
         $con = new ModelConducteur($data_con);

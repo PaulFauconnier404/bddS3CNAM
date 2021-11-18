@@ -3,16 +3,20 @@
         <div class="contenuSignIn">
             <h1>Identifiez vous pour gérer vos stock</h1>
             <p>
-                Les identifiants sont johnsmith@gmail.com | John908!
+                Les identifiants administrateur1@gmail.com | 123
             </p>
             <div class="formContenu">
 
-                <input type="text" placeholder="Identifiant / E-mail" required />
-                <input type="text" placeholder="Mot de passe" required />
+                <form action="index.php" method="get">
+                    <input type="hidden" name="controller" value="signin" required />
+                    <input type="hidden" name="action" value="connect" required />
+                    <input type="text" placeholder="Identifiant / E-mail" name="mail" required />
+                    <input type="password" placeholder="Mot de passe" name="password" required />
 
-                <button type="submit">
-                    Connexion
-                </button>
+                    <button type="submit">
+                        Connexion
+                    </button>
+                </form>
 
             </div>
         </div>

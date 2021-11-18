@@ -9,7 +9,7 @@ body {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   background-color: #FFFFFF;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -32,8 +32,8 @@ body {
 #menu_nav .conteneur_menu .conteneurIcon {
   position: absolute;
   top: 50%;
-  margin-top: -50%;
-  height: 300px;
+  margin-top: -200px;
+  height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +72,7 @@ body {
   height: 70px;
   border-radius: 100px;
   background-color: #FFFFFF;
-  position: absolute;
+  position: fixed;
   top: 30px;
   right: 30px;
 }
@@ -139,14 +139,14 @@ body {
 #accueil .conteneurAccueil .imgAccueil .un {
   width: 300px;
   height: 420px;
-  background-image: url("../img/motor_allu.jpg");
+  background-image: url("../img/image/motor_allu.jpg");
   top: 50%;
   left: 50%;
   margin: -210px -150px;
 }
 
 #accueil .conteneurAccueil .imgAccueil .deux {
-  background-image: url("../img/interior_motor.jpg");
+  background-image: url("../img/image/interior_motor.jpg");
   width: 420px;
   height: 300px;
   top: 30%;
@@ -155,7 +155,7 @@ body {
 }
 
 #accueil .conteneurAccueil .imgAccueil .trois {
-  background-image: url("../img/motor_blue.jpg");
+  background-image: url("../img/image/motor_blue.jpg");
   width: 420px;
   height: 300px;
   top: 70%;
@@ -181,6 +181,206 @@ body {
   font-size: 12px;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
+}
+
+#accueil-command-piece {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#accueil-command-piece .conteneurCommand-piece {
+  width: 80%;
+  margin: 5% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#accueil-command-piece .conteneurCommand-piece .titleSection {
+  text-align: center;
+  width: 80%;
+  margin: 50px 10%;
+  color: #202020;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece {
+  width: 300px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece h1 {
+  margin: 0;
+  color: #202020;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece h2 {
+  margin: 0;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece h2 span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece h3 {
+  margin: 0;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece h3 span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece p {
+  margin: 15px 0;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece p span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+#accueil-command-piece .conteneurCommand-piece .contenu-piece div {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icon/cartP.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#accueil-command-piece .commande-piece-modale {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 750px;
+  height: 750px;
+  -webkit-box-shadow: 0px 0px 10px #707070;
+          box-shadow: 0px 0px 10px #707070;
+  margin: -375px 0 0 -375px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+#accueil-command-piece .commande-piece-modale h2 {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  color: #202020;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: underline;
+}
+
+#accueil-command-piece .commande-piece-modale .conteneurInput {
+  width: 650px;
+}
+
+#accueil-command-piece .commande-piece-modale .conteneurInput label {
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#accueil-command-piece .commande-piece-modale .conteneurInput input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#accueil-command-piece .commande-piece-modale .conteneurInput select {
+  margin-bottom: 10px;
+  width: 80%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#accueil-command-piece .commande-piece-modale .ajoutCar {
+  color: #202020;
+  background-color: #FFFFFF;
+  border: 1px solid #202020;
+  margin-right: 50%;
+}
+
+#accueil-command-piece .commande-piece-modale button {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #202020;
+  border: none;
+}
+
+#accueil-command-piece .visible {
+  display: visible;
+}
+
+#accueil-command-piece .unvisible {
+  display: none;
 }
 
 #signIn {
@@ -316,8 +516,39 @@ body {
           box-sizing: border-box;
 }
 
+#Commande .conteneurCommande .contenuCommande .titleSection {
+  width: 100%;
+  position: relative;
+}
+
+#Commande .conteneurCommande .contenuCommande .titleSection h1 {
+  text-align: center;
+  width: 80%;
+  margin: 20px 10%;
+  color: #202020;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+#Commande .conteneurCommande .contenuCommande .titleSection button {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #202020;
+  border: none;
+}
+
 #Commande .conteneurCommande .contenuCommande tr {
   border-bottom: 1px solid #202020;
+  border: none;
 }
 
 #Commande .conteneurCommande .contenuCommande tr td {
@@ -325,10 +556,37 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #202020;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
   border-right: 1px solid #202020;
+}
+
+#Commande .conteneurCommande .contenuCommande tr td:nth-last-child(2) {
+  border: none;
+}
+
+#Commande .conteneurCommande .contenuCommande tr td:last-child {
+  border: none;
+}
+
+#Commande .conteneurCommande .contenuCommande tr td img {
+  width: 17px;
+}
+
+#Commande .conteneurCommande .contenuCommande tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+#Commande .conteneurCommande .contenuCommande tr:nth-child(even) {
+  background-color: #EFEFEF;
+}
+
+#Commande .conteneurCommande .contenuCommande tr:first-child td {
+  font-size: 12px;
+  font-weight: 500;
+  border-right: none;
+  text-align: center;
 }
 
 #piece {
@@ -359,11 +617,15 @@ body {
   padding: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 1000px;
-  height: 800px;
+  position: relative;
 }
 
-#piece .conteneurpiece .contenupiece h1 {
+#piece .conteneurpiece .contenupiece .titleSection {
+  width: 100%;
+  position: relative;
+}
+
+#piece .conteneurpiece .contenupiece .titleSection h1 {
   text-align: center;
   width: 80%;
   margin: 20px 10%;
@@ -373,30 +635,78 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-#piece .conteneurpiece .contenupiece .btnPieces {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#piece .conteneurpiece .contenupiece .btnPieces button {
+#piece .conteneurpiece .contenupiece .titleSection button {
+  position: absolute;
+  top: 0px;
+  right: 10px;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
-  margin: 20px 10px;
+  margin: 0;
   padding: 10px;
   border-radius: 10px;
   background-color: #202020;
   border: none;
 }
 
+#piece .conteneurpiece .contenupiece tr {
+  border-bottom: 1px solid #202020;
+  border: none;
+}
+
+#piece .conteneurpiece .contenupiece tr td {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #202020;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  border-right: 1px solid #202020;
+}
+
+#piece .conteneurpiece .contenupiece tr td:nth-last-child(2) {
+  border: none;
+}
+
+#piece .conteneurpiece .contenupiece tr td:last-child {
+  border: none;
+}
+
+#piece .conteneurpiece .contenupiece tr td img {
+  width: 17px;
+}
+
+#piece .conteneurpiece .contenupiece tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+#piece .conteneurpiece .contenupiece tr:nth-child(even) {
+  background-color: #EFEFEF;
+}
+
+#piece .conteneurpiece .contenupiece tr:first-child td {
+  font-size: 12px;
+  font-weight: 500;
+  border-right: none;
+  text-align: center;
+}
+
 #piece .conteneurpiece .contenupiece .formulairePiece {
-  width: 500px;
-  margin: 0 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 750px;
+  height: 750px;
+  -webkit-box-shadow: 0px 0px 10px #707070;
+          box-shadow: 0px 0px 10px #707070;
+  margin: -375px 0 0 -375px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
 }
 
 #piece .conteneurpiece .contenupiece .formulairePiece h2 {
@@ -404,20 +714,38 @@ body {
   width: 80%;
   margin: 20px 10%;
   color: #202020;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 25px;
+  font-weight: 700;
   font-family: "Montserrat", sans-serif;
   text-decoration: underline;
 }
 
-#piece .conteneurpiece .contenupiece .formulairePiece label {
+#piece .conteneurpiece .contenupiece .formulairePiece .conteneurInput {
+  width: 650px;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece .conteneurInput label {
   color: #202020;
   font-size: 15px;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
 }
 
-#piece .conteneurpiece .contenupiece .formulairePiece input {
+#piece .conteneurpiece .contenupiece .formulairePiece .conteneurInput input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  color: #202020;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+#piece .conteneurpiece .contenupiece .formulairePiece .conteneurInput select {
   margin-bottom: 10px;
   width: 80%;
   padding: 10px;
@@ -431,18 +759,26 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+#piece .conteneurpiece .contenupiece .formulairePiece .ajoutCar {
+  color: #202020;
+  background-color: #FFFFFF;
+  border: 1px solid #202020;
+  margin-right: 50%;
+}
+
 #piece .conteneurpiece .contenupiece .formulairePiece button {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  margin: 10px;
   padding: 10px;
   border-radius: 10px;
   background-color: #202020;
   border: none;
 }
 
-#piece .conteneurpiece .contenupiece .invisible {
+#piece .conteneurpiece .contenupiece .unvisible {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */

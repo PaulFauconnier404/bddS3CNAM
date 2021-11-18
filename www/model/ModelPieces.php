@@ -4,7 +4,7 @@ require_once(File::build_path(array('model', 'Model.php')));
 
 class ModelPieces extends Model
 {
-    protected static $object = 'Pieces';
+    protected static $object = 'pieces';
 
     private $refPiece;
     private $nomPiece;

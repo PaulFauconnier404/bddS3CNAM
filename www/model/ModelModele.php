@@ -15,11 +15,11 @@ class ModelModele extends Model
     public function __construct($data = array())
     {
         if (!empty($data)) {
-            $this->idModeleVoiture = $data['idModeleVoiture'];
-            $this->nomModeleVoiture = $data['nomModeleVoiture'];
-            $this->anneeModeleVoiture = $data['anneeModeleVoiture'];
-            $this->nbVoiture = $data['nbVoiture'];
-            $this->idMarque = $data['idMarqueModele'];
+            $this->idModeleVoiture = $data['idmodelevoiture'];
+            $this->nomModeleVoiture = $data['nommodelevoiture'];
+            $this->anneeModeleVoiture = $data['anneemodelevoiture'];
+            $this->nbVoiture = $data['nbvoiture'];
+            $this->idMarque = $data['idmarquemodele'];
         }
     }
 

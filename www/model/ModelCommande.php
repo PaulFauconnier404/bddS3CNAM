@@ -4,7 +4,7 @@ require_once(File::build_path(array('model', 'Model.php')));
 
 class ModelCommande extends Model
 {
-    protected static $object = 'Commande';
+    protected static $object = 'commande';
 
     private $idCommande;
     private $accompteVerse;

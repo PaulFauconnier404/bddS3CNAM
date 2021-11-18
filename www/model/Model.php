@@ -49,7 +49,7 @@ class Model
     {
         $table_name = static::$object;
         $class_name = 'Model' . ucfirst($table_name);
-        $primary_key = static::$primary;
+        $primary_key = 'mailadmin';
         $sql = "SELECT * from $table_name WHERE $primary_key=:val";
 
         // Préparation de la requête
@@ -74,14 +74,21 @@ class Model
     {
         $table_name = static::$object;
         $class_name = 'Model' . ucfirst($table_name);
-        $primary_key = static::$primary;
+
+        if (static::$object == 'pieces') {
+            $primary_key = 'refpiece';
+        } elseif (static::$object == 'voiture') {
+            $primary_key = 'idvoiture';
+        } elseif (static::$object == 'commande') {
+            $primary_key = 'idcommande';
+        }
+
         $sql = "DELETE FROM $table_name WHERE $primary_key=:nom_tag";
         try {
             // Préparation de la requête
             $req_prep = Model::$pdo->prepare($sql); //permet de protéger la requete SQL
-
             $values = array(
-                "nom_tag" => $primary,
+                "nom_tag" => $primary
                 //nomdutag => valeur, ...
             );
             // On donne les valeurs et on exécute la requête	 
@@ -144,8 +151,10 @@ class Model
 
     public function save($data)
     {
+
+
         $table_name = static::$object;
-        $primary_key = static::$primary;
+        $primary_key = $primary;
         $attributs = "";
         $variables = "";
         $values = array();

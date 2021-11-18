@@ -232,7 +232,7 @@ VALUES
 INSERT INTO Administrateur
     (mailAdmin, nomAdmin, prenomAdmin, password)
 VALUES
-    ('administrateur1@gmail.com', 'Anthony', 'Fauconnier', 'Test123123');
+    ('administrateur1@gmail.com', 'Anthony', 'Fauconnier', '$2y$10$RMTmn75/bpkHwmyOWhhzI.6jjW8MnIuPh9UKrAbSsSaWS8x6O8.42');
 
 
 INSERT INTO Categorie

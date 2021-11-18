@@ -14,9 +14,9 @@ class ModelAdministrateur extends Model
     public function __construct($data = array())
     {
         if (!empty($data)) {
-            $this->mailAdmin = $data['mailAdmin'];
-            $this->nomAdmin = $data['nomAdmin'];
-            $this->prenomAdmin = $data['prenomAdmin'];
+            $this->mailAdmin = $data['mailadmin'];
+            $this->nomAdmin = $data['nomadmin'];
+            $this->prenomAdmin = $data['prenomadmin'];
             $this->password = $data['password'];
         }
     }
