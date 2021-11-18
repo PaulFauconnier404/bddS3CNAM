@@ -95,7 +95,7 @@ CREATE TABLE Pieces
     FOREIGN KEY (idCategoriePiece)
         REFERENCES Categorie (idCategorie),
     FOREIGN KEY (mailAdminPiece )
-        REFERENCES Administrateur (mailAdmin ),
+        REFERENCES Administrateur (mailAdmin),
     FOREIGN KEY (idVoiturePiece)
         REFERENCES Voiture (idVoiture),
     CHECK (quantPiece > 0),
@@ -107,7 +107,7 @@ CREATE TABLE Commande
     idCommande SERIAL PRIMARY KEY NOT NULL,
     accompteVerse BOOLEAN NOT NULL,
     dateReservation DATE NOT NULL,
-    heureClickCollect DATE NOT NULL,
+    heureClickCollect TIME NOT NULL,
     dateClickCollect DATE NOT NULL,
     mailClientCommande VARCHAR(50) NOT NULL,
     refPieceCommande VARCHAR(50) NOT NULL,

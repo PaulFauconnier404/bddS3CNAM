@@ -24,7 +24,6 @@
 
 <body>
     <?php
-    session_start();
     if ($_GET['controller'] == "commande") {
         $home = 'img/icon/homeV.png';
         $cart = 'img/icon/cartP.png';
@@ -35,7 +34,7 @@
         $cart = 'img/icon/cartV.png';
         $piece = 'img/icon/setV.png';
         $voiture = 'img/icon/carV.png';
-    } else if ($_GET['controller'] == "piece") {
+    } else if ($_GET['controller'] == "pieces") {
         $home = 'img/icon/homeV.png';
         $cart = 'img/icon/cartV.png';
         $piece = 'img/icon/setP.png';
@@ -45,7 +44,7 @@
         $cart = 'img/icon/cartV.png';
         $piece = 'img/icon/setV.png';
         $voiture = 'img/icon/carP.png';
-    } else if ($_GET['controller'] == "signin") {
+    } else if ($_GET['controller'] == "administrateur") {
         $home = 'img/icon/homeV.png';
         $cart = 'img/icon/cartP.png';
         $piece = 'img/icon/setV.png';
@@ -55,51 +54,86 @@
     ?>
 
     <!-- Page Wrapper -->
+    <?php
 
-    <div id="menu_nav">
-        <div class="conteneur_menu">
-            <h1>Gestion
-                <span>
-                    Auto'</span>
-            </h1>
-            <div class="conteneurIcon">
+    if (isset($_SESSION['mail'])) {
 
-                <a href="index.php?controller=accueil&action=readAll">
-                    <div class="IconMenu">
-                        <img src="<?php echo $home; ?>" alt="">
-                        <h2>Accueil</h2>
+        echo ' <div id="menu_nav">
+                    <div class="conteneur_menu">
+                        <h1>Gestion
+                            <span>
+                                Auto\'</span>
+                        </h1>
+                        <div class="conteneurIcon">
+
+                            <a href="index.php?controller=accueil&action=readAll">
+                                <div class="IconMenu">
+                                    <img src="' . $home . '" alt="">
+                                    <h2>Accueil</h2>
+                                </div>
+                            </a>
+                            <a href="index.php?controller=commande&action=readAll">
+                                <div class="IconMenu">
+                                    <img src="' . $cart . '" alt="">
+                                    <h2>Commandes reçus</h2>
+                                </div>
+                            </a>
+                            <a href="index.php?controller=pieces&action=readAll">
+                                <div class="IconMenu">
+                                    <img src="' . $piece . '" alt="">
+                                    <h2>Gérer les pièces</h2>
+                                </div>
+                            </a>
+                            <a href="index.php?controller=voiture&action=readAll">
+                                <div class="IconMenu">
+                                    <img src="' . $voiture . '" alt="">
+                                    <h2>Gérer les voitures</h2>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </a>
-                <a href="index.php?controller=commande&action=readAll">
-                    <div class="IconMenu">
-                        <img src="<?php echo $cart; ?>" alt="">
-                        <h2>Commandes reçus</h2>
+                </div>
+
+                <div id="login">
+                    <a href="index.php?controller=administrateur&action=readAll">
+                        <div class="IconMenu">
+                            <img src="img/icon/user.png" alt="">
+                            <h2>Log in</h2>
+                        </div>
+                    </a>
+                </div>';
+    } else {
+        echo ' <div id="menu_nav">
+                <div class="conteneur_menu">
+                    <h1>Gestion
+                        <span>
+                            Auto\'</span>
+                    </h1>
+                    <div class="conteneurIcon">
+
+                        <a href="index.php?controller=accueil&action=readAll">
+                            <div class="IconMenu">
+                                <img src="' . $home . '" alt="">
+                                <h2>Accueil</h2>
+                            </div>
+                        </a>
+                        
+                        
                     </div>
-                </a>
-                <a href="index.php?controller=piece&action=readAll">
-                    <div class="IconMenu">
-                        <img src="<?php echo $piece; ?>" alt="">
-                        <h2>Gérer les pièces</h2>
-                    </div>
-                </a>
-                <a href="index.php?controller=voiture&action=readAll">
-                    <div class="IconMenu">
-                        <img src="<?php echo $voiture; ?>" alt="">
-                        <h2>Gérer les voitures</h2>
-                    </div>
-                </a>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div id="login">
-        <a href="index.php?controller=signin&action=readAll">
-            <div class="IconMenu">
-                <img src="img/icon/user.png" alt="">
-                <h2>Log in</h2>
-            </div>
-        </a>
-    </div>
+            <div id="login">
+                <a href="index.php?controller=administrateur&action=readAll">
+                    <div class="IconMenu">
+                        <img src="img/icon/user.png" alt="">
+                        <h2>Log in</h2>
+                    </div>
+                </a>
+            </div>';
+    }
+
+    ?>
 
 
     <div id="content-wrapper" class="d-flex flex-column">

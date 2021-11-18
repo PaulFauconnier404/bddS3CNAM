@@ -5,6 +5,7 @@ require_once(File::build_path(array('model', 'ModelVoiture.php')));
 require_once(File::build_path(array('model', 'ModelModele.php')));
 require_once(File::build_path(array('model', 'ModelMarque.php')));
 require_once(File::build_path(array('model', 'ModelCategorie.php')));
+require_once(File::build_path(array('model', 'ModelClient.php')));
 
 require_once(File::build_path(array('controller', 'Controller.php')));
 
@@ -52,5 +53,42 @@ class ControllerAccueil extends Controller
         $view = 'list';
         $pagetitle = 'Accueil - RecupAuto';
         require(File::build_path(array('view', 'view.php')));
+    }
+    public static function created()
+    {
+        $verif_mail = ModelClient::select($_GET["mail"]);
+
+        if ($verif_mail['mailclient'] != $_GET["mail"]) {
+
+            $data_pers = array(
+                "mailclient" => $_GET["mail"],
+                "nomclient" => strtoupper($_GET["nom"]),
+                "preclient" => ucfirst($_GET["prenom"]),
+                "telclient" => $_GET["telephone"]
+            );
+            $p = new ModelClient($data_pers);
+            $p->save($data_pers);
+        }
+
+
+        if ($_GET["accompte"] != 1) {
+            $accompte = 0;
+        } else {
+            $accompte = 1;
+        }
+
+        $data_commande = array(
+            "accompteverse" => $accompte,
+            "datereservation" => date("Y-m-d H:i:s"),
+            "heureclickcollect" => $_GET["heureclickcollect"],
+            "dateclickcollect" => $_GET["dateclickcollet"],
+            "mailclientcommande" => $_GET["mail"],
+            "refpiececommande" =>  $_GET["refPiece"]
+        );
+
+        $command = new ModelCommande($data_commande);
+        $command->save($data_commande);
+
+        self::readAll();
     }
 }

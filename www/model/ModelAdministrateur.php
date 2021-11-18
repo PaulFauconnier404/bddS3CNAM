@@ -4,7 +4,7 @@ require_once(File::build_path(array('model', 'Model.php')));
 
 class ModelAdministrateur extends Model
 {
-    protected static $object = 'Administrateur ';
+    protected static $object = 'administrateur ';
 
     private $mailAdmin;
     private $nomAdmin;

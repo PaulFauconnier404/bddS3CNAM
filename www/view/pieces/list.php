@@ -1,9 +1,3 @@
-<?php
-if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action'] !== "update") {
-    echo '<meta http-equiv="refresh" content="1; URL=index.php?controller=piece&action=readAll" />';
-}
-?>
-
 <section id="piece">
     <div class="conteneurpiece">
         <div class="contenupiece">
@@ -13,10 +7,7 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
                     Créer une pièce
                 </button>
             </div>
-            <?php
-            echo $_SESSION['mail'];
-            echo $_SESSION['password'];
-            ?>
+
             <table>
                 <tr>
                     <td>Référence de pièce</td>
@@ -48,7 +39,7 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
                                 <td>' . htmlspecialchars($c['refPiece']) . '</td>
                                 <td>' . htmlspecialchars($c['nomPiece']) . '</td>
                                 <td>' . htmlspecialchars($c['quantPiece']) . '</td>
-                                <td>' . htmlspecialchars($c['prixPiece']) . '</td>
+                                <td>' . htmlspecialchars($c['prixPiece']) . ' €</td>
                                 <td>' . htmlspecialchars($c['etatPiece']) . '</td>
 
                                 <td>' . htmlspecialchars($c['datePiece']) . ' par ' . htmlspecialchars($c['mailAdmin']) . '</td>
@@ -82,7 +73,7 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
         <div id="creaPiece" class="formulairePiece unvisible">
             <h2>Créer une pièce</h2>
             <form action="index.php" method="get">
-                <input type="hidden" name="controller" value="piece">
+                <input type="hidden" name="controller" value="pieces">
                 <input type="hidden" name="action" value="created">
                 <div class="conteneurInput">
                     <label>Référence de la pièce</label>
@@ -130,16 +121,17 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
                 <div class="conteneurInput">
                 </div>
 
-                <a href="index.php?controller=voiture&action=readAll">
-                    <button class="ajoutCar">
-                        Ajouter une voiture ?
-                    </button>
-                </a>
+
 
                 <button type="submit">
                     Envoyer
                 </button>
             </form>
+            <a href="index.php?controller=voiture&action=readAll">
+                <button class="ajoutCar">
+                    Ajouter une voiture ?
+                </button>
+            </a>
             <button onclick='unvisible()'>
                 Annuler
             </button>
@@ -150,12 +142,8 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
             <div id="' . htmlspecialchars($c['refPiece']) . '" class="formulairePiece unvisible">
                         <h2>Modifier une pièce - ' . htmlspecialchars($c['refPiece']) . '</h2>
                         <form action="index.php" method="get">
-                            <input type="hidden" name="controller" value="piece">
-                            <input type="hidden" name="action" value="created">
-                            <div class="conteneurInput">
-                                <label>Référence de la pièce</label>
-                                <input type="text" required value="' . htmlspecialchars($c['refPiece']) . '" name="refPiece" />
-                            </div>
+                            <input type="hidden" name="controller" value="pieces">
+                            <input type="hidden" name="action" value="updated">
                             <div class="conteneurInput">
                                 <label>Nom de la pièce</label>
                                 <input type="text" required value="' . htmlspecialchars($c['nomPiece']) . '" name="nomPiece" />

@@ -22,7 +22,7 @@ class ModelCommande extends Model
             $this->dateReservation = $data['datereservation'];
             $this->heureClickCollect = $data['heureclickcollect'];
             $this->dateClickCollect = $data['dateclickcollect'];
-            $this->mailClientCommande = $data['mailClientcommande'];
+            $this->mailClientCommande = $data['mailclientcommande'];
             $this->refPieceCommande = $data['refpiececommande'];
         }
     }

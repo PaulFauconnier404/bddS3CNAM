@@ -21,7 +21,7 @@ class ModelVoiture extends Model
             $this->descriptifVoiture = $data['descriptifvoiture'];
             $this->couleurVoiture = $data['couleurvoiture'];
             $this->etatVendableVoiture = $data['etatvendablevoiture'];
-            $this->idModeleVoiture = $data['idmodelevoiture'];
+            $this->idModeleVoiture = $data['idmodele'];
         }
     }
 
