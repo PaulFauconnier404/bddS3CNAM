@@ -1,0 +1,1 @@
+ErrorDocument 404 http://localhost:8082/index.php?controller=accueil&action=error404
