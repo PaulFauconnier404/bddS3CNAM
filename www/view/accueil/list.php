@@ -62,7 +62,7 @@
                 </div>
                 <div class="conteneurInput">
                     <label>Téléphone</label>
-                    <input type="number" required placeholder="Téléphone" name="telephone" />
+                    <input type="number" placeholder="Téléphone" name="telephone" />
                 </div>
                 <div class="conteneurInput">
                     <label>Date du click & collect</label>

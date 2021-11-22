@@ -56,7 +56,7 @@
                                     <img src="img/icon/penP.png" alt="trash"/>
                                 </td>
                                     <td> 
-                                    <a href="index.php?controller=piece&action=deleted&idpiece=' . htmlspecialchars($c['refPiece']) . '">
+                                    <a href="index.php?controller=pieces&action=deleted&idpiece=' . htmlspecialchars($c['refPiece']) . '">
 
                                         <img src="img/icon/trash.png" alt="trash"/>
                                         </a>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="conteneurInput">
                     <label>Prix de la pièce</label>
-                    <input type="number" required placeholder="Prix de la pièce" name="prixPiece" />
+                    <input type="number" required placeholder="Prix de la pièce" step="0.01" name="prixPiece" />
                 </div>
                 <div class="conteneurInput">
                     <label>État de la pièce</label>
@@ -143,7 +143,8 @@
                         <h2>Modifier une pièce - ' . htmlspecialchars($c['refPiece']) . '</h2>
                         <form action="index.php" method="get">
                             <input type="hidden" name="controller" value="pieces">
-                            <input type="hidden" name="action" value="updated">
+                        <input type="hidden" name="action" value="updated">
+                        <input type="hidden" name="refPiece" value="' . htmlspecialchars($c['refPiece']) . '">
                             <div class="conteneurInput">
                                 <label>Nom de la pièce</label>
                                 <input type="text" required value="' . htmlspecialchars($c['nomPiece']) . '" name="nomPiece" />
@@ -154,7 +155,7 @@
                             </div>
                             <div class="conteneurInput">
                                 <label>Prix de la pièce</label>
-                                <input type="number" required value="' . htmlspecialchars($c['prixPiece']) . '" name="prixPiece" />
+                                <input type="number" required step="0.01" value="' . htmlspecialchars($c['prixPiece']) . '" name="prixPiece" />
                             </div>
                             <div class="conteneurInput">
                                 <label>État de la pièce</label>

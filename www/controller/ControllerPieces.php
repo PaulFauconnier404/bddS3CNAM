@@ -104,6 +104,7 @@ class ControllerPieces extends Controller
     public static function updated()
     {
         $data_piece = array(
+            "refpiece" => strtoupper($_GET["refPiece"]),
             "nompiece" => ucfirst($_GET["nomPiece"]),
             "quantpiece" => $_GET["quantPiece"],
             "prixpiece" => $_GET["prixPiece"],

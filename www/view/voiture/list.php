@@ -155,9 +155,7 @@
 
                 <div class="conteneurInput">
                     <label>Modèle de la voiture</label>
-                    <select name="idmodele" required>
-                        <option value="' . htmlspecialchars($c['idVoiture']) . '">' . htmlspecialchars($c['idVoiture']) . ' - ' . htmlspecialchars($c['nomModele']) . ' - ' . htmlspecialchars($c['anneemodelevoiture']) . '</option>';
-
+                    <select name="idmodele" required>';
 
             foreach ($modeleView as $modele) {
                 echo '<option value="' . $modele['idModeleVoiture'] . '">' . $modele['nomModeleVoiture'] . ' - ' . $modele['anneeModeleVoiture'] . '</option>';

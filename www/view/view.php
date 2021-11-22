@@ -119,9 +119,9 @@
                         </a>
                         
                         
+                        </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
             <div id="login">
                 <a href="index.php?controller=administrateur&action=readAll">
@@ -136,26 +136,17 @@
     ?>
 
 
-    <div id="content-wrapper" class="d-flex flex-column">
 
-        <!-- Main Content -->
-        <div id="content">
-            <div class="container-fluid">
-                <?php
-                if (isset(self::$object)) {
+    <?php
+    if (isset(self::$object)) {
 
-                    $filepath = File::build_path(array("view", self::$object, "$view.php"));
-                    require $filepath;
-                } else {
-                    $message = explode('CONTEXT', substr($e->errorInfo[2], 7));
-                    echo '<div class="alert alert-danger col-lg-6 offset-3" role="alert"><i class="fas fa-exclamation-triangle"></i> <b>Erreur :</b>' . $message[0] . '</div>';
-                }
-                ?>
-            </div>
-
-        </div>
-
-    </div>
+        $filepath = File::build_path(array("view", self::$object, "$view.php"));
+        require $filepath;
+    } else {
+        $message = explode('CONTEXT', substr($e->errorInfo[2], 7));
+        echo '<div class="alert alert-danger col-lg-6 offset-3" role="alert"><i class="fas fa-exclamation-triangle"></i> <b>Erreur :</b>' . $message[0] . '</div>';
+    }
+    ?>
 
 
 </body>
