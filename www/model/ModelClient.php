@@ -4,7 +4,7 @@ require_once(File::build_path(array('model', 'Model.php')));
 
 class ModelClient extends Model
 {
-    protected static $object = 'Client';
+    protected static $object = 'client';
 
     private $mailClient;
     private $nomClient;

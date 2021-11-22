@@ -33,7 +33,7 @@ class ControllerVoiture extends Controller
 
                             'nomModele' => $modele->get('nommodelevoiture'),
                             'anneemodelevoiture' => $modele->get('anneemodelevoiture'),
-                            'nbvoiture' => $marque->get('nbvoiture'),
+                            'nbvoiture' => $modele->get('nbvoiture'),
 
                             'marque' => $marque->get('nommarque'),
                             'idmarque' => $marque->get('idmarque'),
@@ -67,26 +67,49 @@ class ControllerVoiture extends Controller
     }
     public static function created()
     {
-        $data_piece = array(
-            "refpiece" => strtoupper($_GET["refPiece"]),
-            "nompiece" => ucfirst($_GET["nomPiece"]),
-            "quantpiece" => $_GET["quantPiece"],
-            "prixpiece" => $_GET["prixPiece"],
-            "etatpiece" => $_GET["etatPiece"],
-            "datemodifpiece" => date("Y-m-d H:i:s"),
-            "idcategoriepiece" => $_GET["idCategoriePiece"],
-            "mailadminpiece" => 'administrateur1@gmail.com',
-            "idvoiturepiece" => $_GET["idVoiturePiece"],
+        if ($_GET["etatvendablevoiture"] != 1) {
+            $accompte = 0;
+        } else {
+            $accompte = 1;
+        }
+        $data_voiture = array(
+            "dateentreevoiture" => $_GET["dateentreevoiture"],
+            "descriptifvoiture" => $_GET["descriptifvoiture"],
+            "couleurvoiture" => $_GET["couleurvoiture"],
+            "etatvendablevoiture" => $accompte,
+            "idmodele" => $_GET["idmodele"]
         );
 
-        $p = new ModelPieces($data_piece);
-        $p->save($data_piece);
+        $p = new ModelVoiture($data_voiture);
+        $p->save($data_voiture);
 
         self::readAll();
     }
     public static function deleted()
     {
         ModelVoiture::delete($_GET['idvoiture']);
+
+        self::readAll();
+    }
+    public static function updated()
+    {
+
+        if ($_GET["etatvendablevoiture"] != 1) {
+            $accompte = 0;
+        } else {
+            $accompte = 1;
+        }
+        $data_voiture = array(
+            "idvoiture" => $_GET["idvoiture"],
+            "dateentreevoiture" => $_GET["dateentreevoiture"],
+            "descriptifvoiture" => $_GET["descriptifvoiture"],
+            "couleurvoiture" => $_GET["couleurvoiture"],
+            "etatvendablevoiture" => $accompte,
+            "idmodele" => $_GET["idmodele"]
+        );
+
+        $pieces = new ModelVoiture($data_voiture);
+        $pieces->update($data_voiture);
 
         self::readAll();
     }

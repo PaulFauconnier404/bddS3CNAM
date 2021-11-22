@@ -26,22 +26,28 @@
             </h1>
             <div class="conteneurIcon">
 
-                <a href=" ">
+                <a href="index.php?controller=accueil&action=readAll">
                     <div class="IconMenu">
-                        <img src="../img/icon/homeV.png" alt="">
+                        <img src="img/icon/homeP.png" alt="">
                         <h2>Accueil</h2>
                     </div>
                 </a>
-                <a href="">
+                <a href="index.php?controller=commande&action=readAll">
                     <div class="IconMenu">
-                        <img src="../img/icon/cartV.png" alt="">
+                        <img src="img/icon/cartV.png" alt="">
                         <h2>Commandes reçus</h2>
                     </div>
                 </a>
-                <a href="">
+                <a href="index.php?controller=pieces&action=readAll">
                     <div class="IconMenu">
-                        <img src="../img/icon/setV.png" alt="">
+                        <img src="img/icon/setV.png" alt="">
                         <h2>Gérer les pièces</h2>
+                    </div>
+                </a>
+                <a href="index.php?controller=voiture&action=readAll">
+                    <div class="IconMenu">
+                        <img src="img/icon/carV.png" alt="">
+                        <h2>Gérer les voitures</h2>
                     </div>
                 </a>
             </div>
@@ -49,38 +55,22 @@
     </div>
 
     <div id="login">
-        <a href="">
+        <a href="index.php?controller=administrateur&action=readAll">
             <div class="IconMenu">
-                <img src="" alt="">
+                <img src="img/icon/user.png" alt="">
                 <h2>Log in</h2>
             </div>
         </a>
     </div>
 
 
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-            </nav>
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-
-                <!-- 404 Error Text -->
-                <div class="text-center">
-                    <div class="error mx-auto" data-text="404">404</div>
-                    <p class="lead text-gray-800 mb-5">Page non trouvée</p>
-                    <p class="text-gray-500 mb-0">Il semble y avoir un bug dans la matrice ...</p>
-                    <a href="index.php">&larr; Retour au Dashboard</a>
-                </div>
-
-            </div>
-            <!-- /.container-fluid -->
-
+    <div class="errorPage">
+        <div>
+            <p>Page non trouvée</p>
+            <p>Il semble y avoir un bug dans la matrice ...</p>
+            <a href="index.php">&larr; Retour à l'accueil</a>
         </div>
+
     </div>
 </body>
 

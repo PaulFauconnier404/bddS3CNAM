@@ -8,9 +8,9 @@ require_once(File::build_path(array('model', 'ModelCategorie.php')));
 
 require_once(File::build_path(array('controller', 'Controller.php')));
 
-class ControllerPiece extends Controller
+class ControllerPieces extends Controller
 {
-    protected static $object = 'piece';
+    protected static $object = 'pieces';
 
     public static function readAll()
     {
@@ -84,18 +84,40 @@ class ControllerPiece extends Controller
             "etatpiece" => $_GET["etatPiece"],
             "datemodifpiece" => date("Y-m-d H:i:s"),
             "idcategoriepiece" => $_GET["idCategoriePiece"],
-            "mailadminpiece" => 'administrateur1@gmail.com',
             "idvoiturepiece" => $_GET["idVoiturePiece"],
+            "mailadminpiece" => $_SESSION['mail']
+
         );
 
-        $p = new ModelPieces($data_piece);
-        $p->save($data_piece);
+        $pieces = new ModelPieces($data_piece);
+        $pieces->save($data_piece);
 
         self::readAll();
     }
+
     public static function deleted()
     {
         ModelPieces::delete($_GET['idpiece']);
+
+        self::readAll();
+    }
+    public static function updated()
+    {
+        $data_piece = array(
+            "refpiece" => strtoupper($_GET["refPiece"]),
+            "nompiece" => ucfirst($_GET["nomPiece"]),
+            "quantpiece" => $_GET["quantPiece"],
+            "prixpiece" => $_GET["prixPiece"],
+            "etatpiece" => $_GET["etatPiece"],
+            "datemodifpiece" => date("Y-m-d H:i:s"),
+            "idcategoriepiece" => $_GET["idCategoriePiece"],
+            "idvoiturepiece" => $_GET["idVoiturePiece"],
+            "mailadminpiece" => $_SESSION['mail']
+
+        );
+
+        $pieces = new ModelPieces($data_piece);
+        $pieces->update($data_piece);
 
         self::readAll();
     }

@@ -3,6 +3,29 @@ body {
   margin: 0%;
 }
 
+.errorPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.errorPage p, .errorPage a {
+  font-size: 15px;
+  text-align: center;
+  top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700px;
+  text-decoration: none;
+}
+
 #menu_nav {
   width: 100px;
   height: 100vh;
@@ -50,6 +73,21 @@ body {
 
 #menu_nav .conteneur_menu .conteneurIcon a {
   text-decoration: none;
+}
+
+#menu_nav .conteneur_menu .conteneurIcon a .IconMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #menu_nav .conteneur_menu .conteneurIcon a .IconMenu img {

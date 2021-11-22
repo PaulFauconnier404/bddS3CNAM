@@ -77,7 +77,7 @@
         <div id="creaPiece" class="formulairePiece unvisible">
             <h2>Créer une Voiture</h2>
             <form action="index.php" method="get">
-                <input type="hidden" name="controller" value="piece">
+                <input type="hidden" name="controller" value="voiture">
                 <input type="hidden" name="action" value="created">
                 <div class="conteneurInput">
                     <label>Date d'entrée de la voiture</label>
@@ -93,28 +93,17 @@
                 </div>
                 <div class="conteneurInput">
                     <label>État de la voiture </label>
-                    <input type="checkbox" required name="etatvendablevoiture" />
+                    <input type="checkbox" name="etatvendablevoiture" />
                 </div>
 
                 <div class="conteneurInput">
                     <label>Modèle de la voiture</label>
-                    <select name="idCategoriePiece" required>
+                    <select name="idmodele" required>
                         <option value="">--Modèle de la voiture--</option>
                         <?php
 
                         foreach ($modeleView as $modele) {
                             echo '<option value="' . $modele['idModeleVoiture'] . '">' . $modele['nomModeleVoiture'] . ' - ' . $modele['anneeModeleVoiture'] . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="conteneurInput">
-                    <label>Marque de la voiture</label>
-                    <select name="idVoiturePiece" required>
-                        <option value="">--Marque de la voiture--</option>
-                        <?php
-                        foreach ($marqueView as $marque) {
-                            echo '<option value="' . $marque['idMarque'] . '">' . $marque['nomMarque'] . '</option>';
                         }
                         ?>
                     </select>
@@ -137,8 +126,8 @@
             <div id="' . htmlspecialchars($c['idVoiture']) . '" class="formulairePiece unvisible">
             <h2>Modifier une Voiture - ' . htmlspecialchars($c['idVoiture']) . ' | ' . htmlspecialchars($c['nomModele']) . '</h2>
             <form action="index.php" method="get">
-                <input type="hidden" name="controller" value="piece">
-                <input type="hidden" name="action" value="created">
+                <input type="hidden" name="controller" value="voiture">
+                <input type="hidden" name="action" value="updated">
                 <input type="hidden" name="idvoiture" value="' . htmlspecialchars($c['idVoiture']) . '">
                 <div class="conteneurInput">
                     <label>Date d\'entrée de la voiture</label>
@@ -161,14 +150,12 @@
             echo '
                 <div class="conteneurInput">
                     <label>État de la voiture </label>
-                    <input type="checkbox" ' . $checked . ' required name="etatvendablevoiture" />
+                    <input type="checkbox" ' . $checked . '  name="etatvendablevoiture" />
                 </div>
 
                 <div class="conteneurInput">
                     <label>Modèle de la voiture</label>
-                    <select name="idCategoriePiece" required>
-                        <option value="' . htmlspecialchars($c['idVoiture']) . '">' . htmlspecialchars($c['idVoiture']) . ' - ' . htmlspecialchars($c['nomModele']) . ' - ' . htmlspecialchars($c['anneemodelevoiture']) . '</option>';
-
+                    <select name="idmodele" required>';
 
             foreach ($modeleView as $modele) {
                 echo '<option value="' . $modele['idModeleVoiture'] . '">' . $modele['nomModeleVoiture'] . ' - ' . $modele['anneeModeleVoiture'] . '</option>';
@@ -176,17 +163,7 @@
             echo '
                     </select>
                 </div>
-                <div class="conteneurInput">
-                    <label>Marque de la voiture</label>
-                    <select name="idVoiturePiece" required>
-                        <option value="' . htmlspecialchars($c['idmarque']) . '">' . htmlspecialchars($c['marque']) . '</option>';
-
-            foreach ($marqueView as $marque) {
-                echo '<option value="' . $marque['idMarque'] . '">' . $marque['nomMarque'] . '</option>';
-            }
-            echo '
-                    </select>
-                </div>
+             
 
                 <button type="submit">
                     Envoyer

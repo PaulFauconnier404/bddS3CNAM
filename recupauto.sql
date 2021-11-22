@@ -28,7 +28,7 @@ CREATE TABLE Client
     mailClient VARCHAR(50) PRIMARY KEY NOT NULL,
     nomClient VARCHAR(50) NOT NULL,
     preClient VARCHAR(50) NOT NULL,
-    telClient INTEGER NOT NULL
+    telClient INTEGER NULL
 );
 
 CREATE TABLE Administrateur
@@ -45,6 +45,7 @@ CREATE TABLE Categorie
     idCategorie SERIAL PRIMARY KEY NOT NULL,
     nomCategorie VARCHAR(255) NOT NULL,
     nbPiece INTEGER NULL
+        CHECK (nbPiece > 0)
 
 );
 
@@ -95,7 +96,7 @@ CREATE TABLE Pieces
     FOREIGN KEY (idCategoriePiece)
         REFERENCES Categorie (idCategorie),
     FOREIGN KEY (mailAdminPiece )
-        REFERENCES Administrateur (mailAdmin ),
+        REFERENCES Administrateur (mailAdmin),
     FOREIGN KEY (idVoiturePiece)
         REFERENCES Voiture (idVoiture),
     CHECK (quantPiece > 0),
@@ -107,111 +108,21 @@ CREATE TABLE Commande
     idCommande SERIAL PRIMARY KEY NOT NULL,
     accompteVerse BOOLEAN NOT NULL,
     dateReservation DATE NOT NULL,
-    heureClickCollect DATE NOT NULL,
+    heureClickCollect TIME NOT NULL,
     dateClickCollect DATE NOT NULL,
     mailClientCommande VARCHAR(50) NOT NULL,
     refPieceCommande VARCHAR(50) NOT NULL,
     FOREIGN KEY (mailClientCommande)
         REFERENCES Client (mailClient),
     FOREIGN KEY (refPieceCommande)
-        REFERENCES Pieces (refPiece)
+        REFERENCES Pieces (refPiece),
+    CHECK (heureClickCollect >'08:00:00'),
+    CHECK (dateReservation < dateClickCollect)
+
 );
 
 
 
-
-
-
--- Création des fonctions et des vues
-CREATE OR REPLACE FUNCTION Nombre_de_modele_dune_marque
-()
-    RETURNS TRIGGER
-    LANGUAGE plpgsql
-AS
-$$
-DECLARE
-    nbModeleTrig INTEGER;
-BEGIN
-    SELECT COUNT(*)
-    INTO nbModeleTrig
-    FROM Modele, Marque
-    WHERE idMarqueModele = OLD.idMarque;
-
-    IF nbModeleTrig IS NOT NULL THEN
-    UPDATE Marque SET idMarque = NULL WHERE nbModele = nbModeleTrig;
-END
-IF;
-
-    RETURN OLD;
-END
-$$;
-
-CREATE OR REPLACE FUNCTION Nombre_de_piece_dans_categorie
-()
-    RETURNS TRIGGER
-    LANGUAGE plpgsql
-AS
-$$
-DECLARE
-    nbPieceTrig INTEGER;
-BEGIN
-    SELECT COUNT(*)
-    INTO nbPieceTrig
-    FROM Piece, Categorie
-    WHERE idCategoriePiece = OLD.idCategorie;
-
-    IF nbModeleTrig IS NOT NULL THEN
-    UPDATE Categorie SET idCategorie = NULL WHERE nbPiece = nbPieceTrig;
-END
-IF;
-
-    RETURN OLD;
-END
-$$;
-
-CREATE OR REPLACE FUNCTION Nombre_de_voiture_dun_modele
-()
-    RETURNS TRIGGER
-    LANGUAGE plpgsql
-AS
-$$
-DECLARE
-    nbVoitureTrig INTEGER;
-BEGIN
-    SELECT COUNT(*)
-    INTO nbVoitureTrig
-    FROM Piece, Categorie
-    WHERE idModele = OLD.idModeleVoiture;
-
-    IF nbModeleTrig IS NOT NULL THEN
-    UPDATE Modele SET idModele = NULL WHERE nbVoiture = nbVoitureTrig;
-END
-IF;
-
-    RETURN OLD;
-END
-$$;
-
-CREATE TRIGGER Nombre_de_modele_dune_marque_trigger
-    BEFORE
-UPDATE ON Marque
-    FOR EACH ROW
-EXECUTE FUNCTION Nombre_de_modele_dune_marque
-();
-
-CREATE TRIGGER Nombre_de_piece_dans_categorie_trigger
-    BEFORE
-UPDATE ON Categorie
-    FOR EACH ROW
-EXECUTE FUNCTION Nombre_de_piece_dans_categorie
-();
-
-CREATE TRIGGER Nombre_de_voiture_dun_modele_trigger
-    BEFORE
-UPDATE ON Modele
-    FOR EACH ROW
-EXECUTE FUNCTION Nombre_de_voiture_dun_modele
-();
 
 
 -- Insertion de données de test et validation du fonctionnement de la base
@@ -309,23 +220,112 @@ VALUES
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-09-28', '2021-10-30 12:00:00', '2021-10-20', 'micheldupuit@gmail.com', 'SDEJKF');
+    (TRUE, '2021-09-28', '12:00:00', '2021-12-30', 'micheldupuit@gmail.com', 'SDEJKF');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (FALSE, '2021-08-21', '2021-10-30 13:32:32', '2021-10-20', 'micheldupuit@gmail.com', 'EHRLDM');
+    (FALSE, '2021-08-21', '13:32:32', '2021-12-30', 'micheldupuit@gmail.com', 'EHRLDM');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-10-28', '2021-10-30 05:03:30', '2021-10-30', 'jeandupont@gmail.com', 'SDEJKF');
+    (TRUE, '2021-10-28', '09:03:30', '2021-12-30', 'jeandupont@gmail.com', 'SDEJKF');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-11-01', '2021-10-30 18:03:10', '2021-11-09', 'johndoe@gmail.com', 'ERTGCJ');
+    (TRUE, '2021-11-01', '17:03:10', '2021-12-30', 'johndoe@gmail.com', 'ERTGCJ');
 
 
 
 
+-- Création des fonctions et des vues
+CREATE OR REPLACE FUNCTION Nombre_de_modele_dune_marque
+()
+    RETURNS TRIGGER
+    
+AS $$
+DECLARE
+    		nbModeleTrig INTEGER;
+BEGIN
+    SELECT COUNT(*)
+    INTO nbModeleTrig
+    FROM modele, marque
+    WHERE idmarqueModele = idmarque;
+
+    UPDATE marque SET nbmodele = nbModeleTrig WHERE idmarque = idmarque;
+
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION Nombre_de_piece_dans_categorie
+()
+    RETURNS TRIGGER
+AS $$
+DECLARE
+		nbPieceTrig INTEGER;
+BEGIN
+    SELECT COUNT(*)
+    INTO nbPieceTrig
+    FROM pieces, categorie
+    WHERE idcategoriepiece = idcategorie;
+
+    UPDATE categorie SET nbpiece = nbPieceTrig WHERE idcategorie = idcategorie;
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE OR REPLACE FUNCTION Nombre_de_voiture_dun_modele
+()
+    RETURNS TRIGGER  
+AS $$
+DECLARE
+		nbVoitureTrig INTEGER;
+BEGIN
+    SELECT COUNT(*)
+    INTO nbVoitureTrig
+    FROM modele, voiture
+    WHERE idmodele = idmodelevoiture;
+
+    UPDATE modele SET nbvoiture = nbVoitureTrig WHERE idmodelevoiture = idmodelevoiture;
+
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE TRIGGER Nombre_de_voiture_dun_modele_trigger
+    AFTER
+INSERT ON
+voiture
+FOR
+EACH
+ROW
+EXECUTE FUNCTION Nombre_de_voiture_dun_modele
+();
+
+CREATE TRIGGER Nombre_de_modele_dune_marque_trigger
+    AFTER
+INSERT ON
+voiture
+FOR
+EACH
+ROW
+EXECUTE FUNCTION Nombre_de_modele_dune_marque
+();
+
+CREATE TRIGGER Nombre_de_piece_dans_categorie_trigger
+    AFTER
+INSERT ON
+pieces
+FOR
+EACH
+ROW
+EXECUTE FUNCTION Nombre_de_piece_dans_categorie
+();
 
 
 

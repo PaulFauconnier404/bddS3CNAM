@@ -49,8 +49,16 @@ class Model
     {
         $table_name = static::$object;
         $class_name = 'Model' . ucfirst($table_name);
-        $primary_key = 'mailadmin';
-        $sql = "SELECT * from $table_name WHERE $primary_key=:val";
+
+        if (static::$object == 'client') {
+            $primary_key = 'mailclient';
+        } else if (static::$object == 'pieces') {
+            $primary_key = 'refpiece';
+        } else {
+            $primary_key = 'mailadmin';
+        }
+
+        $sql = "SELECT * from $table_name WHERE $primary_key =:val";
 
         // Préparation de la requête
         $req_prep = Model::$pdo->prepare($sql); //permet de protéger la requete SQL
@@ -108,7 +116,16 @@ class Model
     public function update($data)
     {
         $table_name = static::$object;
-        $primary_key = static::$primary;
+        if (static::$object == 'client') {
+            $primary_key = 'mailclient';
+        } elseif (static::$object == 'pieces') {
+            $primary_key = 'refpiece';
+        } elseif (static::$object == 'voiture') {
+            $primary_key = 'idvoiture';
+        } elseif (static::$object == 'administrateur') {
+            $primary_key = 'mailadmin';
+        }
+
         $set = "";
         $values = array();
 
@@ -154,7 +171,16 @@ class Model
 
 
         $table_name = static::$object;
-        $primary_key = $primary;
+
+        if (static::$object == 'client') {
+            $primary_key = 'mailclient';
+        } elseif (static::$object == 'pieces') {
+            $primary_key = 'refpiece';
+        } elseif (static::$object == 'voiture') {
+            $primary_key = 'idvoiture';
+        } elseif (static::$object == 'administrateur') {
+            $primary_key = 'mailadmin';
+        }
         $attributs = "";
         $variables = "";
         $values = array();
@@ -183,8 +209,8 @@ class Model
 
             $req_prep->execute($values);
 
-            if (!isset(static::$isComposite))
-                return Model::$pdo->lastInsertId();
+            // if (!isset(static::$isComposite))
+            //     return Model::$pdo->lastInsertId();
         } catch (PDOException $e) {
             if (Conf::getDebug()) {
                 $view = 'error';

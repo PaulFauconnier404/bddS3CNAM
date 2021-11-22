@@ -44,7 +44,7 @@
         <div id="' . htmlspecialchars($c['refPiece']) . '" class="commande-piece-modale unvisible">
             <h2>Commander une pièce | ' . htmlspecialchars($c['refPiece']) . '</h2>
             <form action="index.php" method="get">
-                <input type="hidden" name="controller" value="piece">
+                <input type="hidden" name="controller" value="accueil">
                 <input type="hidden" name="action" value="created">
                 <input type="hidden" required value="' . htmlspecialchars($c['refPiece']) . '" name="refPiece" />
 
@@ -62,7 +62,7 @@
                 </div>
                 <div class="conteneurInput">
                     <label>Téléphone</label>
-                    <input type="text" required placeholder="Téléphone" name="telephone" />
+                    <input type="number" placeholder="Téléphone" name="telephone" />
                 </div>
                 <div class="conteneurInput">
                     <label>Date du click & collect</label>
@@ -72,7 +72,10 @@
                     <label>Heure du click & collect</label>
                     <input type="time" required name="heureclickcollect" />
                 </div>
-
+                <div class="conteneurInput">
+                    <label>Je verse l\'accompte</label>
+                    <input type="checkbox"  name="accompte" />
+                </div>
                 <button type="submit">
                     Envoyer
                 </button>
