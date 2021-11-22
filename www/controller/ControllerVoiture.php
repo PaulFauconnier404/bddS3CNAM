@@ -33,7 +33,7 @@ class ControllerVoiture extends Controller
 
                             'nomModele' => $modele->get('nommodelevoiture'),
                             'anneemodelevoiture' => $modele->get('anneemodelevoiture'),
-                            'nbvoiture' => $marque->get('nbvoiture'),
+                            'nbvoiture' => $modele->get('nbvoiture'),
 
                             'marque' => $marque->get('nommarque'),
                             'idmarque' => $marque->get('idmarque'),

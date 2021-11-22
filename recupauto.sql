@@ -220,19 +220,19 @@ VALUES
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-09-28', '2021-10-30', '12:00:00', 'micheldupuit@gmail.com', 'SDEJKF');
+    (TRUE, '2021-09-28', '12:00:00', '2021-12-30', 'micheldupuit@gmail.com', 'SDEJKF');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (FALSE, '2021-08-21', '2021-10-30', '13:32:32', 'micheldupuit@gmail.com', 'EHRLDM');
+    (FALSE, '2021-08-21', '13:32:32', '2021-12-30', 'micheldupuit@gmail.com', 'EHRLDM');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-10-28', '2021-10-30', '09:03:30', 'jeandupont@gmail.com', 'SDEJKF');
+    (TRUE, '2021-10-28', '09:03:30', '2021-12-30', 'jeandupont@gmail.com', 'SDEJKF');
 INSERT INTO Commande
     (accompteVerse, dateReservation, heureClickCollect, dateClickCollect, mailClientCommande, refPieceCommande)
 VALUES
-    (TRUE, '2021-11-01', '2021-10-30', '17:03:10', 'johndoe@gmail.com', 'ERTGCJ');
+    (TRUE, '2021-11-01', '17:03:10', '2021-12-30', 'johndoe@gmail.com', 'ERTGCJ');
 
 
 
