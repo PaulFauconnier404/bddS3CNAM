@@ -49,7 +49,7 @@ if ($_GET['action'] !== "readAll" && $_GET['action'] !== "read" && $_GET['action
 
                                 <td>' . htmlspecialchars($c['dateReservation']) . '</td>
                                 <td>' . htmlspecialchars($c['dateRecuperation']) . '</td>';
-                    if (htmlspecialchars($c['accompte']) == 1) {
+                    if (htmlspecialchars($c['accompte']) == true) {
                         $accompte = 'Accompte versé';
                     } else {
                         $accompte = '<b>Accompte non-versé</b>';

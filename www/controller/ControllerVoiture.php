@@ -68,9 +68,9 @@ class ControllerVoiture extends Controller
     public static function created()
     {
         if ($_GET["etatvendablevoiture"] != 1) {
-            $accompte = 0;
+            $accompte = false;
         } else {
-            $accompte = 1;
+            $accompte = true;
         }
         $data_voiture = array(
             "dateentreevoiture" => $_GET["dateentreevoiture"],
@@ -94,17 +94,13 @@ class ControllerVoiture extends Controller
     public static function updated()
     {
 
-        if ($_GET["etatvendablevoiture"] != 1) {
-            $accompte = 0;
-        } else {
-            $accompte = 1;
-        }
+
         $data_voiture = array(
             "idvoiture" => $_GET["idvoiture"],
             "dateentreevoiture" => $_GET["dateentreevoiture"],
             "descriptifvoiture" => $_GET["descriptifvoiture"],
             "couleurvoiture" => $_GET["couleurvoiture"],
-            "etatvendablevoiture" => $accompte,
+            "etatvendablevoiture" => $_GET["etatvendablevoiture"],
             "idmodele" => $_GET["idmodele"]
         );
 

@@ -74,7 +74,7 @@
                 </div>
                 <div class="conteneurInput">
                     <label>Je verse l\'accompte</label>
-                    <input type="checkbox"  name="accompte" />
+                    <input type="checkbox" value="true" name="accompte" />
                 </div>
                 <button type="submit">
                     Envoyer
